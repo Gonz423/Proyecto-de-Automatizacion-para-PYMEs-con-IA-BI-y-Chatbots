@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert, ActivityIndicator } from "react-native";
 import { useAuth } from "../../hooks/userAuth";
-import { getUsers, User } from "../../services/userService"; 
+import { getUsers, User } from "../../services/userService";
 import { router } from "expo-router";
-import styles from "../../styles/login.styles"; // Importa los estilos desde el archivo separado
+import styles from "../../styles/login.styles";
 
 export default function LoginScreen() {
     const { login } = useAuth();
@@ -38,36 +38,47 @@ export default function LoginScreen() {
         }
     };
 
+    const handleRegister = () => {
+        // Redirige al us la uario apantalla de registro.
+        // Asegúrate de que tienes una ruta "(auth)/register" en tu proyecto.
+        router.push('/(auth)/register');
+    };
+
     return (
         <View style={styles.container}>
-        <Text style={styles.title}>Iniciar Sesión</Text>
-        <TextInput
-            style={styles.input}
-            placeholder="Correo Electrónico"
-            value={email}
-            onChangeText={setEmail}
-            keyboardType="email-address"
-            autoCapitalize="none"
-            editable={!isLoading}
+            <Text style={styles.title}>Iniciar Sesión</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Correo Electrónico"
+                value={email}
+                onChangeText={setEmail}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                editable={!isLoading}
             />
             <TextInput
-            style={styles.input}
-            placeholder="Contraseña"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-            editable={!isLoading}
+                style={styles.input}
+                placeholder="Contraseña"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+                editable={!isLoading}
             />
             <TouchableOpacity
-            style={[styles.button, isLoading && styles.buttonDisabled]}
-            onPress={handleLogin}
-            disabled={isLoading}
+                style={[styles.button, isLoading && styles.buttonDisabled]}
+                onPress={handleLogin}
+                disabled={isLoading}
             >
                 {isLoading ? (
                     <ActivityIndicator color="#fff" />
                 ) : (
-                <Text style={styles.buttonText}>Entrar</Text>
+                    <Text style={styles.buttonText}>Entrar</Text>
                 )}
-                </TouchableOpacity>
-                </View>);
+            </TouchableOpacity>
+
+            <TouchableOpacity style={{ marginTop: 20 }} onPress={handleRegister}>
+                <Text style={{ textAlign: 'center', color: '#007AFF' }}>¿No tienes una cuenta? Regístrate aquí.</Text>
+            </TouchableOpacity>
+        </View>
+    );
 }

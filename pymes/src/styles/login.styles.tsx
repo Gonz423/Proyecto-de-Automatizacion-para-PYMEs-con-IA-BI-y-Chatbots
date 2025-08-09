@@ -1,31 +1,50 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: { flex: 1, justifyContent: "center", padding: 20 },
-    title: { fontSize: 28, fontWeight: "bold", textAlign: "center", marginBottom: 40 },
-    input: { borderWidth: 1, padding: 15, marginBottom: 20, borderRadius: 8, borderColor: "#ccc" },
-    button: {
-        backgroundColor: "#007AFF",
-        padding: 15,
-        borderRadius: 8,
-        alignItems: "center",
-        ...Platform.select({
-            ios: {
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.25,
-                shadowRadius: 3.84,
-            },
-            android: {
-                elevation: 5,
-            },
-            web: {
-                boxShadow: "0 2px 4px rgba(0,0,0,0.25)",
-            },
-        }),
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+        backgroundColor: '#f5f5f5',
     },
-    buttonText: { color: "#fff", fontSize: 18, fontWeight: "bold" },
-    buttonDisabled: { backgroundColor: "#a0c4ff" },
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: '#333',
+    },
+    input: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        paddingHorizontal: 15,
+        fontSize: 16,
+        marginBottom: 15,
+        borderColor: '#ddd',
+        borderWidth: 1,
+    },
+    button: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#007AFF',
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10,
+        // ** Aquí se corrige la advertencia **
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        elevation: 5, // Esta propiedad se usa en Android para simular sombras
+    },
+    buttonDisabled: {
+        backgroundColor: '#a5a5a5',
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
 });
 
 export default styles;
