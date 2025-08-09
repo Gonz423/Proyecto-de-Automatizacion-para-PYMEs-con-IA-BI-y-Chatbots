@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { colors } from "./theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -6,29 +7,29 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: colors.background,
     },
     title: {
         fontSize: 28,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: '#333',
+        color: colors.textPrimary,
     },
     input: {
         width: '100%',
         height: 50,
-        backgroundColor: '#fff',
+        backgroundColor: colors.white,
         borderRadius: 10,
         paddingHorizontal: 15,
         fontSize: 16,
         marginBottom: 15,
-        borderColor: '#ddd',
+        borderColor: colors.border,
         borderWidth: 1,
     },
     button: {
         width: '100%',
         height: 50,
-        backgroundColor: '#007AFF',
+        backgroundColor: colors.primary,
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
@@ -38,10 +39,10 @@ const styles = StyleSheet.create({
         elevation: 5, // Esta propiedad se usa en Android para simular sombras
     },
     buttonDisabled: {
-        backgroundColor: '#a5a5a5',
+        backgroundColor: colors.disabled,
     },
     buttonText: {
-        color: '#fff',
+        color: colors.white,
         fontSize: 18,
         fontWeight: 'bold',
     },
