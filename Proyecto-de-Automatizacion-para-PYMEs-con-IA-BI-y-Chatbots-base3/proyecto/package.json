@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "moti": "^0.30.0",
+    "nativewind": "^4.1.23"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/react": "^19.1.10",
+    "@types/react-native": "^0.72.8",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.9.2"
+  }
+}
