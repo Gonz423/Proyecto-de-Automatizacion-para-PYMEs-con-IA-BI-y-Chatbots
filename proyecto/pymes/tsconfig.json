@@ -1,0 +1,26 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "types": ["react", "react-native", "expo-router"]
+  },
+  "include": [
+    "src/**/*",
+    "app.config.ts",
+    "metro.config.js",
+    "global.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/plugins/widgets-manifest.json",
+    "nativewind-env.d.ts" // Asegúrate de que este archivo o un comodín esté incluido
+  ]
+}
