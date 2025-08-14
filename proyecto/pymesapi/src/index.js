@@ -1,21 +1,27 @@
 import express from 'express';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
+import orderRoutes from './routes/ordersRoutes.js';
+import inventoryRoutes from './routes/inventoryRoutes.js';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
-app.use(express.json());
+// Middlewares
 app.use(cors());
+app.use(express.json());
 
-// Montamos todas las rutas de usuario bajo el prefijo /api/auth
-// Esto hace que tu endpoint de login sea: POST /api/auth/login
+// Monta las rutas de la API
 app.use('/api/auth', userRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/inventory', inventoryRoutes);
 
+// Middleware para manejar rutas no encontradas (404)
 app.use((req, res) => {
   res.status(404).json({ error: 'Ruta no encontrada', path: req.originalUrl });
 });
 
+// Inicia el servidor
 app.listen(port, () => {
   console.log(`🚀 Servidor corriendo en el puerto ${port}`);
 });

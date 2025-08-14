@@ -11,9 +11,9 @@ export default function RootLayout() {
       {/* Aquí puedes añadir las pantallas que estarán disponibles después del login */}
       <Stack.Screen name="home" />
       <Stack.Screen name="profile" />
-      
-      {/* CORREGIDO: Se eliminó la siguiente línea que causaba el error: */}
-      {/* <Stack.Screen name="(main)" options={{ headerShown: false }} /> */}
+      <Stack.Screen name="orders" />
+      <Stack.Screen name="inventory" />
+
     </Stack>
   );
 }

@@ -90,10 +90,7 @@ export default function InventoryScreen() {
       <View style={styles.itemInfo}>
         <Text style={styles.itemProduct}>{item.producto}</Text>
         <Text style={styles.itemSku}>SKU: {item.sku} | Categoría: {item.categoria}</Text>
-        {/* CORREGIDO: Se añade una comprobación para evitar el error si precio_unitario es undefined */}
-        <Text style={styles.itemPrice}>
-          ${typeof item.precio_unitario === 'number' ? item.precio_unitario.toFixed(2) : '0.00'}
-        </Text>
+        <Text style={styles.itemPrice}>${item.precio_unitario.toFixed(2)}</Text>
       </View>
       <StockIndicator stock={item.stock} />
     </View>
