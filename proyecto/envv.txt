@@ -1,0 +1,7 @@
+PORT=3001
+DATABASE_URL="postgresql://neondb_owner:npg_70uNdPxVDHoi@ep-wandering-mountain-aczwyet7-pooler.sa-east-1.aws.neon.tech/midatabase?sslmode=require&channel_binding=require"
+# Define la URL completa de tu backend, incluyendo el prefijo /api
+EXPO_PUBLIC_API_BASE=http://10.0.2.2:3001/api
+# Define la ruta específica para el inicio de sesión
+EXPO_PUBLIC_LOGIN_PATH=/auth/login
+SESSION_TTL_HOURS=12
